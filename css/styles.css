@@ -10,16 +10,30 @@ body {
   margin: 0;
 }
 
+/* Granim.js CSS code START */
+#granim-canvas {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+/* Granim.js CLOSE */
+
 header {
   padding: 40px;
   text-align: center;
-  background: #13293d;
+  /* background: #13293d; */
   color: #fff;
 }
 
 nav {
   display: flex;
-  background-color: #d8a47f;
+  /* background-color: #d8a47f; */
 }
 
 nav a {
@@ -36,18 +50,18 @@ main {
 
 aside {
   flex: 1;
-  background-color: #b9c6ae;
+  /* background-color: #b9c6ae; */
   padding: 20px;
 }
 
 section {
   flex: 3;
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 20px;
 }
 
 .sample-img {
-  background-color: #fff;
+  /* background-color: #fff; */
   width: 100%;
   padding: 20px;
   height: 200px;
@@ -57,7 +71,7 @@ section {
 footer {
   padding: 20px;
   text-align: center;
-  background: #13293d;
+  /* background: #13293d; */
   color: #fff;
 }
 
@@ -73,11 +87,11 @@ footer {
   }
   /* Change the header background */
   header {
-    background: #772014;
+    /* background: #772014; */
   }
   /* Change the navbar and footer background */
   nav,
   footer {
-    background-color: #bb8588;
+    /* background-color: #bb8588; */
   }
 }
