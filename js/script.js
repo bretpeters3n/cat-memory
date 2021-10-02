@@ -9,6 +9,33 @@ var myName = "Bret";
 // functions
 function doSomethign() {}
 
+// "x-api-key": "b69f0faf-4c12-4714-8998-743f7fb4546e",
+
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("x-api-key", "b69f0faf-4c12-4714-8998-743f7fb4546e");
+
+var requestOptions = {
+  method: "GET",
+  headers: myHeaders,
+  redirect: "follow",
+};
+
+fetch(
+  "https://api.thecatapi.com/v1/images/search?format=json&limit=5",
+  requestOptions
+)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+    //Loop over the data to generate a table, each table row will have a link to the repo url
+    for (var i = 0; i < data.length; i++) {
+      // Do shit to each element in array
+    }
+  });
+
 // Template END //
 
 // - EXAMPLES - //
