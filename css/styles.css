@@ -28,7 +28,7 @@ header {
   padding: 40px;
   text-align: center;
   /* background: #13293d; */
-  color: #fff;
+  color: #13293d;
 }
 
 nav {
@@ -72,7 +72,7 @@ footer {
   padding: 20px;
   text-align: center;
   /* background: #13293d; */
-  color: #fff;
+  color: #13293d;
 }
 
 @media screen and (max-width: 768px) {

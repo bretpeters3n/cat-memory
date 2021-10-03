@@ -1,7 +1,17 @@
 // Template START //
 
 // selectors
-var firstChildUl = document.getElementById("first-child-ul");
+var theCards = $("#theCards");
+var image01 = $("#card-img-01");
+var image02 = $("#card-img-02");
+var image03 = $("#card-img-03");
+var image04 = $("#card-img-04");
+var image05 = $("#card-img-05");
+var image06 = $("#card-img-06");
+var image07 = $("#card-img-07");
+var image08 = $("#card-img-08");
+var image09 = $("#card-img-09");
+var image10 = $("#card-img-10");
 
 // global variables
 var myName = "Bret";
@@ -22,7 +32,7 @@ var requestOptions = {
 };
 
 fetch(
-  "https://api.thecatapi.com/v1/images/search?format=json&limit=5",
+  "https://api.thecatapi.com/v1/images/search?format=json&limit=10",
   requestOptions
 )
   .then(function (response) {
@@ -30,10 +40,30 @@ fetch(
   })
   .then(function (data) {
     console.log(data);
+
+    //assign 2 cat URLs to a variable an then array
+    var catArray = [];
+
     //Loop over the data to generate a table, each table row will have a link to the repo url
     for (var i = 0; i < data.length; i++) {
       // Do shit to each element in array
+      var catURL = data[i].url;
+      catArray.push(catURL);
     }
+
+    console.log(catArray);
+
+    // image01.remove();
+    image01.attr("src", catArray[0]);
+    image02.attr("src", catArray[1]);
+    image03.attr("src", catArray[2]);
+    image04.attr("src", catArray[3]);
+    image05.attr("src", catArray[4]);
+    image06.attr("src", catArray[5]);
+    image07.attr("src", catArray[6]);
+    image08.attr("src", catArray[7]);
+    image09.attr("src", catArray[8]);
+    image10.attr("src", catArray[9]);
   });
 
 // Template END //
