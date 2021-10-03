@@ -1,4 +1,48 @@
-// Template START //
+// PSUEDO CODING START //
+
+// Navigation with 'game' 'adoption' 'contact' 'about'
+
+// Create layout (wireframe) for cards on page
+// make placeholder DIV in html for cards (fill these with event delegation)
+// Add start button to start game
+// Start with cards fliped over (no cats)
+// One game - use time left from timer to give their score
+// place timer in top right
+//
+
+// initial page load
+// page with nav, title, desc, start button, and flipped over cards
+// on press START, flip cards over to reveal for 2 seconds, then flip back over.
+// Start timer now.
+// Allow user to click on two cards and flip them
+// Compare these two cards (for similar attributes)
+// If they match, place green border on matched cards
+// If they don't, flip them back over
+// If all are matched, stop timer and use time as score.
+// If timer runs out, bring them to results page with score 0.
+
+// card logic
+// Every click runs through a function. This function will:
+// flip a card that has been clicked on
+// once two cards have been flipped it will compare the flips.
+// upon match, outline green, and keep playing
+// upon mismatch, flip card back over
+// Start with array full of 8 (including duplicates) cat images.
+// choose a random url and place it in spot 1. Repeat until all 8 are filled.
+// use array of objects to store images with attributes for matching.
+// event delegation can handle making these caerds interactive (click events)
+// each card can be constructed as 2 layers. Layer 1 is side with logo. Layer 2 is side with cat.
+// when clicked the second layer is revealed.
+// funtion that keeps track of card flips, and stops for comparison at 2 (reset this on matches)
+// use an attribute to state whether the card can still be interacted with or not.
+// attributes to use:
+// matched/unmatched
+// similar cards will share attribute (ex: match1) if these attributes match, success.
+//
+
+// Final score page with user score and place to enter initials.
+
+// PSUEDO CODING END //
 
 // selectors
 var theCards = $("#theCards");
