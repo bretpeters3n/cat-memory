@@ -20,30 +20,20 @@
 
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">CatMemory</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">The Game</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Adoption</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -51,8 +41,10 @@
   </nav>
 
   <header>
-    <h1>Responsive Web Design</h1>
-    <p>Watch what happens to the navbar links when the screen hits 780px!</p>
+    <h1>A Cat Memory Game</h1>
+    <p>Start the timer and match as many cat cards as possible.</p>
+    <p>Your previous score was ...</p>
+    <button>Start</button>
   </header>
 
   <main class="container" id="theCards">
@@ -126,9 +118,13 @@
 
   </main>
   <footer>
-    <h3>
-      footer content here
-    </h3>
+    <form>
+      <div class="form-group">
+        <label for="formControlRange">Rate this game!</label>
+        <input type="range" class="form-control-range" id="formControlRange">
+        <button type="submit">Sumbit</button>
+      </div>
+    </form>
   </footer>
 </body>
 
