@@ -21,7 +21,7 @@
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
 
-      <a class="navbar-brand" href="#"><img src="./img/catMemory_cat_logo.png" class="catLogo" alt="#">CatMemory</a>
+      <a class="navbar-brand"><img src="./img/catMemory_cat_logo.png" class="catLogo" alt="#">CatMemory</a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,10 +33,10 @@
             <a class="nav-link active" aria-current="page" href="#">The Game</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Adoption</a>
+            <a class="nav-link" href="adoption.html">Adoption</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href= "#footer" >Rate</a>
           </li>
         </ul>
       </div>
@@ -46,7 +46,6 @@
   <header>
     <h1>A Cat based Memory Game</h1>
     <p>Match as many cat cards as you can in the time allotted.</p>
-    <p>Your previous score was: XX</p>
     <p>Time: <span id="timer"></span></p>
     <button class="startGame" type="submit">Start Game</button>
   </header>
@@ -60,7 +59,7 @@
     </div>
   </main>
 
-  <footer>
+  <footer id="footer">
     <h3>
       <label for="customRange2" class="form-label">Rate our game!</label>
       <input type="range" class="form-range" min="0" max="5" id="customRange2">
