@@ -58,12 +58,15 @@ var image07 = $("#card-img-07");
 var image08 = $("#card-img-08");
 var image09 = $("#card-img-09");
 var image10 = $("#card-img-10");
+var startBtn = $(".startGame");
+var timer = $("#timer")
 
 // global variables
 var catArray = [];
 var catArrayDuplicate = [];
 var cards = [];
 var cardsFlipped = [];
+var secondsLeft = 60;
 
 // functions
 function doSomethign() {}
@@ -79,6 +82,21 @@ var requestOptions = {
   headers: myHeaders,
   redirect: "follow",
 };
+
+function startGame() {
+  console.log("start")
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timer.text(secondsLeft);
+
+    if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        window.confirm("Times Up!");
+        console.log(secondsLeft)
+  }
+
+}, 1000);
+}
 
 fetch(
   "https://api.thecatapi.com/v1/images/search?format=json&limit=4",
@@ -203,6 +221,10 @@ function compareFlips() {
     console.log("not a match");
   }
 }
+
+// Event listener for the start button
+startBtn.click (startGame);
+
 
 // Template END //
 
