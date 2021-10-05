@@ -58,7 +58,7 @@ var image07 = $("#card-img-07");
 var image08 = $("#card-img-08");
 var image09 = $("#card-img-09");
 var image10 = $("#card-img-10");
-var startBtn = $(".startGame");
+var startBtn = $("#startBtn");
 var timer = $("#timer")
 
 // global variables
