@@ -91,7 +91,7 @@ function startTimer() {
         clearInterval(timerInterval);
         secondsLeft = 10
         window.confirm("Times Up!");
-        
+        localStorage.setItem("score", +1);
   }
 
 }, 1000);
