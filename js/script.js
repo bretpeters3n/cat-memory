@@ -66,7 +66,7 @@ var catArray = [];
 var catArrayDuplicate = [];
 var cards = [];
 var cardsFlipped = [];
-var secondsLeft = 60;
+var secondsLeft = 10;
 
 // functions
 function doSomethign() {}
@@ -83,16 +83,15 @@ var requestOptions = {
   redirect: "follow",
 };
 
-function startGame() {
-  console.log("start")
+function startTimer() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
     timer.text(secondsLeft);
-
-    if(secondsLeft === 0) {
+    if(secondsLeft <= 0) {
         clearInterval(timerInterval);
+        secondsLeft = 10
         window.confirm("Times Up!");
-        console.log(secondsLeft)
+        
   }
 
 }, 1000);
@@ -223,7 +222,7 @@ function compareFlips() {
 }
 
 // Event listener for the start button
-startBtn.click (startGame);
+startBtn.click (startTimer);
 
 
 // Template END //
