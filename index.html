@@ -20,30 +20,23 @@
 
   <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+
+      <a class="navbar-brand" href="#"><img src="./img/catMemory_cat_logo.png" class="catLogo" alt="#">CatMemory</a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+            <a class="nav-link active" aria-current="page" href="#">The Game</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Adoption</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown link
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -51,80 +44,21 @@
   </nav>
 
   <header>
-    <h1>Responsive Web Design</h1>
-    <p>Watch what happens to the navbar links when the screen hits 780px!</p>
+    <h1>A Cat based Memory Game</h1>
+    <p>Match as many cat cards as you can in the time allotted.</p>
+    <p>Your previous score was: XX</p>
+    <button type="submit">Start Game</button>
   </header>
 
-  <main class="container" id="theCards">
+  <main class="container">
 
-    <div class="row">
+    <div class="cards" id="theCards">
 
-      <div class="col">
-        <div class="card">
-          <img src="./img/cat.jpg" class="card-img" id="card-img-01" alt="#">
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card">
-          <img src="./img/cat.jpg" class="card-img" id="card-img-02" alt="#">
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card">
-          <img src="./img/cat.jpg" class="card-img" id="card-img-03" alt="#">
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card">
-          <img src="./img/cat.jpg" class="card-img" id="card-img-04" alt="#">
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card">
-          <img src="./img/cat.jpg" class="card-img" id="card-img-05"alt="#">
-        </div>
-      </div>
+      
 
     </div>
-    <div class="row">
-
-      <div class="col">
-        <div class="card">
-          <img src="./img/cat.jpg" class="card-img" id="card-img-06" alt="#">
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card">
-          <img src="./img/cat.jpg" class="card-img" id="card-img-07" alt="#">
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card">
-          <img src="./img/cat.jpg" class="card-img" id="card-img-08" alt="#">
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card">
-          <img src="./img/cat.jpg" class="card-img" id="card-img-09" alt="#">
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card">
-          <img src="./img/cat.jpg" class="card-img" id="card-img-10" alt="#">
-        </div>
-      </div>
-
-    </div>
-
   </main>
+
   <footer>
     <h3>
       <label for="customRange2" class="form-label">Rate our game!</label>
@@ -132,9 +66,10 @@
       <button type="button" class="btn btn-primary">Submit</button>
     </h3>
   </footer>
-
-  <!-- Added link to the jQuery library -->
+    
+<!-- Added link to the jQuery library -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 
 <!-- Only import SLIM if you are not loading jQuery independently -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script> -->
@@ -152,6 +87,8 @@
 <!-- Import Javasctipt file 'script.js' -->
 <script src="./js/script.js"></script>
 <script src="./js/script-bret.js"></script>
+
 </body>
 
 </html>
+
