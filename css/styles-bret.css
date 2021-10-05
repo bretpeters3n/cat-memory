@@ -2,3 +2,18 @@
   padding-top: 16px;
   padding-bottom: 16px;
 }
+.cards {
+  text-align: center;
+}
+.card {
+  text-align: center; /* placeholder */
+}
+.cards img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  flex-direction: row;
+  border-radius: 8px;
+  outline: 1px solid #000;
+  margin: 8px;
+}
