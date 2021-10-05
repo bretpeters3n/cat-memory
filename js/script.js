@@ -42,101 +42,9 @@
 
 // Final score page with user score and place to enter initials.
 
-document.addEventListener("DOMcontentLoaded", () => {
-  const CardArray = [
-    {
-      name: "cat1",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat1",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat2",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat2",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat3",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat3",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat4",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat4",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat5",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat5",
-      img: "./img/cat.jpg",
-    },
-  ];
+// Footer contact with radio button approval disapproval survey
 
-  cardArray.sort(() => 0.5 - Math.random());
-
-  const grid = document.querySelector(".grid");
-  const resultDisplay = document.querySelector("#result");
-  var cardsChosen = [];
-  var cardsChosenId = [];
-  var cardsWon = [];
-
-  //board
-
-  createBoard();
-  for (let i = 0; i < CardArray.length; i++) {
-    var card = document.createElement("img");
-    card.setAttribute("src", ".img/devJordan1.jpg");
-    card.setAttribute("data-id", i);
-    // card.addEventListener('click', flipcard)
-    grid.appendChild(card);
-  }
-
-  function checkForMatch() {
-    var cards = document.querySelectorAll("img");
-    const optionOneId = cardsChosenID[0];
-    const optionTwoId = cardsChosen[1];
-    if (cardsChosen[0] === cardsChosen[1]) {
-      alert("Match!");
-      cards[optionOneId].setAttribute("src", "./img/devJordan1.jpg");
-      cards[optionTwoId].setAttribute("src", "./img.devJordan1.jpg");
-      cardsWon.push(cardsChosen);
-    } else {
-      cards[optionOneId].setAttribute("src", ".img/devJordan.jpg");
-      cars[optionTwoId].setAttribute("src", "./img/devJordan.jpg");
-      alert("Nope");
-    }
-    cardsChosen = [];
-    cardsChosenID = [];
-    resultDisplay.textContent = cardsWon.length;
-    if (cardsWon.length === cardArray.length / 2) {
-      resultDisplay.textContent = "Yup";
-    }
-  }
-
-  function flipCard() {
-    var cardId = this.getAttribute("data-id");
-    cardsChosen.push(cardArray[cardId].name);
-    cardsChosenId.push(cardId);
-    this.setAttribute("src", cardArray[cardId].img);
-    if (cardsChosen.length === 2) {
-      setTimeout(checkForMatch, 500);
-    }
-  }
-});
+// PSUEDO CODING END //
 
 // selectors
 var theCards = $("#theCards");
@@ -152,7 +60,10 @@ var image09 = $("#card-img-09");
 var image10 = $("#card-img-10");
 
 // global variables
-var myName = "Bret";
+var catArray = [];
+var catArrayDuplicate = [];
+var cards = [];
+var cardsFlipped = [];
 
 // functions
 function doSomethign() {}
@@ -170,17 +81,14 @@ var requestOptions = {
 };
 
 fetch(
-  "https://api.thecatapi.com/v1/images/search?format=json&limit=10",
+  "https://api.thecatapi.com/v1/images/search?format=json&limit=4",
   requestOptions
 )
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
-
-    //assign 2 cat URLs to a variable an then array
-    var catArray = [];
+    // console.log(data);
 
     //Loop over the data to generate a table, each table row will have a link to the repo url
     for (var i = 0; i < data.length; i++) {
@@ -189,40 +97,132 @@ fetch(
       catArray.push(catURL);
     }
 
+    //duplicate array and transfer value back to original array
+    catArrayDuplicate = catArray;
+    catArray = $.merge(catArray, catArrayDuplicate);
+
+    //randomize array
+    catArray.sort(() => 0.5 - Math.random());
     console.log(catArray);
 
-    // image01.remove();
-    image01.attr("src", catArray[0]);
-    image02.attr("src", catArray[1]);
-    image03.attr("src", catArray[2]);
-    image04.attr("src", catArray[3]);
-    image05.attr("src", catArray[4]);
-    image06.attr("src", catArray[5]);
-    image07.attr("src", catArray[6]);
-    image08.attr("src", catArray[7]);
-    image09.attr("src", catArray[8]);
-    image10.attr("src", catArray[9]);
+    cards = [
+      {
+        front: "./img/cat_200x200.jpg",
+        back: catArray[0],
+      },
+      {
+        front: "./img/cat_200x200.jpg",
+        back: catArray[1],
+      },
+      {
+        front: "./img/cat_200x200.jpg",
+        back: catArray[2],
+      },
+      {
+        front: "./img/cat_200x200.jpg",
+        back: catArray[3],
+      },
+      {
+        front: "./img/cat_200x200.jpg",
+        back: catArray[4],
+      },
+      {
+        front: "./img/cat_200x200.jpg",
+        back: catArray[5],
+      },
+      {
+        front: "./img/cat_200x200.jpg",
+        back: catArray[6],
+      },
+      {
+        front: "./img/cat_200x200.jpg",
+        back: catArray[7],
+      },
+    ];
+
+    // console.log(cards);
+
+    createMemoryBoard();
+
+    // commented out to try IMG only tags
+    // image01.attr("src", catArray[0]);
+    // image02.attr("src", catArray[1]);
+    // image03.attr("src", catArray[2]);
+    // image04.attr("src", catArray[3]);
+    // image05.attr("src", catArray[4]);
+    // image06.attr("src", catArray[5]);
+    // image07.attr("src", catArray[6]);
+    // image08.attr("src", catArray[7]);
   });
+
+//IMG tag method
+function createMemoryBoard() {
+  console.log("createMemoryBoard() entered"); // check progress
+
+  for (var i = 0; i < cards.length; i++) {
+    var front = cards[i].front;
+    var back = cards[i].back;
+    var img = $("<img>");
+    img
+      .attr("src", cards[i].front)
+      .click(back, function (event) {
+        // console.log(event.data);
+        $(this).attr("src", event.data);
+        cardsFlipped.push(event.data);
+        countFlips();
+      })
+      .appendTo(theCards);
+  }
+  // for (var i = 0; i < catArray.length; i++) {
+  //   var img = $("<img>");
+  //   img
+  //     .attr("src", catArray[i])
+  //     .click(function () {
+  //       console.log("clicked");
+  //       $(this).attr("src", catArray[4]);
+  //     })
+  //     .appendTo(theCards);
+  // }
+}
+
+function countFlips() {
+  if (cardsFlipped.length === 2) {
+    console.log(cardsFlipped);
+    setTimeout(compareFlips, 800);
+  } else {
+    //
+    console.log("not 2");
+  }
+}
+
+function compareFlips() {
+  console.log("comparing flips");
+  if (cardsFlipped[0] === cardsFlipped[1]) {
+    console.log("match!");
+  } else {
+    console.log("not a match");
+  }
+}
 
 // Template END //
 
 // - EXAMPLES - //
 
 // Declaring a variable - this is an example
-var studentName;
+// var studentName;
 
 // Uses assignment operator(=) to assign a value
-var studentName = "Abdul";
+// var studentName = "Abdul";
 
 // To re-assign a variable, use only the variable's name
-studentName = "Tonya";
+// studentName = "Tonya";
 
 // To access a value stored in a variable, use the variable's name
-console.log(studentName);
+// console.log(studentName);
 
 //To combine the message with a variable value use the concatenation operator(+)
 //Logs "My name is "
-console.log("My name is ");
+// console.log("My name is ");
 
 // Logs "My name is Tonya"
-console.log("My name is " + studentName);
+// console.log("My name is " + studentName);
