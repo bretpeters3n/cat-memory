@@ -58,13 +58,15 @@ var image07 = $("#card-img-07");
 var image08 = $("#card-img-08");
 var image09 = $("#card-img-09");
 var image10 = $("#card-img-10");
-var startBtn = $(".startGame");
-var timer = $("#timer")
+var startBtn = $("#startBtn");
+var timer = $("#timer");
+var submitBtn = $("#submitBtn");
 
 // global variables
 var catArray = [];
 var catArrayDuplicate = [];
 var cards = [];
+
 
 var cardsFlippedCat = [];
 var cardsFlippedIndex = [];
@@ -80,11 +82,27 @@ var gamePlayHappening = false;
 var secondsLeft = 60;
 
 
+
 // functions
 function doSomethign() {}
 
 // "x-api-key": "b69f0faf-4c12-4714-8998-743f7fb4546e",
 
+
+
+function startTimer() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timer.text(secondsLeft + " seconds left!");
+    if(secondsLeft <= 0) {
+        clearInterval(timerInterval);
+        secondsLeft = 10
+        window.confirm("Times Up!");
+        localStorage.setItem("score", +1);
+  }
+
+}, 1000);
+  
 function init() {
   gamePlayHappening = true;
 
@@ -183,6 +201,7 @@ function init() {
       // image07.attr("src", catArray[6]);
       // image08.attr("src", catArray[7]);
     });
+
 }
 
 
@@ -272,6 +291,41 @@ function compareFlips() {
   }
 }
 
+
+const allRanges = document.querySelectorAll(".range-wrap");
+allRanges.forEach(wrap => {
+  const range = wrap.querySelector(".range");
+  const bubble = wrap.querySelector(".bubble");
+
+  range.addEventListener("input", () => {
+    setBubble(range, bubble);
+  });
+  setBubble(range, bubble);
+});
+
+function setBubble(range, bubble) {
+  const val = range.value;
+  const min = range.min ? range.min : 0;
+  const max = range.max ? range.max : 100;
+  const newVal = Number(((val - min) * 100 / (max - min)));
+  bubble.innerHTML = val;
+
+  bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+}
+
+submitBtn.click(getUserRating);
+
+function getUserRating() {
+  var range = document.getElementById("range")
+  var currentVal = range.value;
+  var emailInput = document.getElementById("email");
+  var userEmail = emailInput.value;
+    console.log(currentVal);
+    localStorage.setItem(userEmail, currentVal);
+}
+
+
+
 function outlineFlips() {
   console.log("outlineFlips () entered");
   //go through array and outline both indexes in array
@@ -321,13 +375,14 @@ startGame.click(function () {
     cards = [];
     cardsFlippedCat = [];
     cardsFlippedIndex = [];
-
+    startTimer ();
     matchCount = 0;
     init();
   } else {
     console.log("Game is currently being played.");
   }
 });
+
 
 
 // Template END //
