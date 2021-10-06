@@ -1,42 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Responsive Web Design</title>
+  <title>CatMemory</title>
+  <link rel="icon" href="./img/catMemory_cat_logo.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- import fonts (google fonts) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Rubik&display=swap" rel="stylesheet">
-  <!-- import bootstrap -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-  <!-- import STYLES css file -->
   <link rel="stylesheet" type="text/css" href="./css/styles.css" />
   <link rel="stylesheet" type="text/css" href="./css/styles-bret.css" />
 </head>
 <body>
-  <!-- Create a <canvas> element -->
   <canvas id="granim-canvas"></canvas>
 
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
-
-      <a class="navbar-brand" href="#"><img src="./img/catMemory_cat_logo.png" class="catLogo" alt="#">CatMemory</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-light navbar-expand-lg">
+      <a class="navbar-brand"><img src="./img/catMemory_cat_logo.png" class="catLogo" alt="#">CatMemory</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-
-            <a class="nav-link active" aria-current="page" href="#">The Game</a>
+            <a class="nav-link active" aria-current="page" href="#game">The Game</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Adoption</a>
+            <a class="nav-link" href="adoption.html">Adoption</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href= "#footer" >Rate</a>
           </li>
         </ul>
       </div>
@@ -46,12 +36,16 @@
   <header>
     <h1>A Cat based Memory Game</h1>
     <p>Match as many cat cards as you can in the time allotted.</p>
+
+      <div id="timer"></div>           
     <p>Your previous score was: XX</p>
-    <p>Time: <span id="timer"></span></p>
-    <button class="startGame" type="submit">Start Game</button>
+
+    <button type="submit" class="btn btn-primary" id="startGame">Start Game</button>
+
   </header>
 
   <main class="container">
+    <img id="introImage" src="./img/catCards.png" />
 
     <div class="cards" id="theCards">
 
@@ -60,12 +54,13 @@
     </div>
   </main>
 
-  <footer>
-    <h3>
-      <label for="customRange2" class="form-label">Rate our game!</label>
-      <input type="range" class="form-range" min="0" max="5" id="customRange2">
-      <button type="button" class="btn btn-primary">Submit</button>
-    </h3>
+  <footer id="footer">
+    <input id="email" type="email" class="form-control" id="exampleInputEmail1" placeholder= "Please leave your email and rate our game!" aria-describedby="emailHelp">
+    <div class="range-wrap" style="width: 75%;">
+      <input id="range" type="range" class="range" value="3" min="1" max="5" step="1">
+      <output class = "bubble"></output>
+    </div>
+    <button id= "submitBtn" type="button" class="btn btn-primary">Submit</button>
   </footer>
     
 <!-- Added link to the jQuery library -->
@@ -87,7 +82,7 @@
 
 <!-- Import Javasctipt file 'script.js' -->
 <script src="./js/script.js"></script>
-<script src="./js/script-bret.js"></script>
+<!-- <script src="./js/script-bret.js"></script> -->
 
 </body>
 
