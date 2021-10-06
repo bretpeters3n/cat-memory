@@ -86,7 +86,7 @@ var requestOptions = {
 function startTimer() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
-    timer.text(secondsLeft);
+    timer.text(secondsLeft + " seconds left!");
     if(secondsLeft <= 0) {
         clearInterval(timerInterval);
         secondsLeft = 10
@@ -241,7 +241,7 @@ function setBubble(range, bubble) {
   const val = range.value;
   const min = range.min ? range.min : 0;
   const max = range.max ? range.max : 100;
-  const newVal = Number(((val - min) * 100) / (max - min));
+  const newVal = Number(((val - min) * 100 / (max - min)));
   bubble.innerHTML = val;
 
   bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
