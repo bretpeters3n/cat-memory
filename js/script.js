@@ -59,7 +59,8 @@ var image08 = $("#card-img-08");
 var image09 = $("#card-img-09");
 var image10 = $("#card-img-10");
 var startBtn = $("#startBtn");
-var timer = $("#timer")
+var timer = $("#timer");
+var submitBtn = $("#submitBtn");
 
 // global variables
 var catArray = [];
@@ -245,6 +246,17 @@ function setBubble(range, bubble) {
   bubble.innerHTML = val;
 
   bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
+}
+
+submitBtn.click(getUserRating);
+
+function getUserRating() {
+  var range = document.getElementById("range")
+  var currentVal = range.value;
+  var emailInput = document.getElementById("email");
+  var userEmail = emailInput.value;
+    console.log(currentVal);
+    localStorage.setItem(userEmail, currentVal);
 }
 
 

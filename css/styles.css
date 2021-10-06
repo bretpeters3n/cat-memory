@@ -53,12 +53,6 @@ main {
   flex-wrap: wrap;
 }
 
-aside {
-  flex: 1;
-  /* background-color: #b9c6ae; */
-  padding: 20px;
-}
-
 section {
   flex: 3;
   /* background-color: #fff; */
@@ -71,13 +65,6 @@ section {
   padding: 20px;
   height: 200px;
   border: 1px solid black;
-}
-
-footer {
-
-  padding: 20px;
-  text-align: center;
-  color: #13293d;
 }
 
 @media screen and (max-width: 768px) {
@@ -94,10 +81,24 @@ footer {
 }
 
 /* styling for range */
+footer {
+  padding: 20px;
+  text-align: center;
+  color: #13293d;
+  
+}
+
+footer h3 {
+  font-size: 20px;
+}
+
+.form-control {
+  text-align: center;
+}
 
 .range-wrap {
   position: relative;
-  margin: 0 auto 3rem;
+  margin: 2rem auto 1rem;
 }
 .range {
   width: 100%;
@@ -130,3 +131,4 @@ footer {
   font-weight: bold;
   padding-bottom: 10px;
 }
+
