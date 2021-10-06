@@ -110,6 +110,7 @@ function startTimer() {
   }, 1000);
 }
 
+
 function init() {
   gamePlayHappening = true;
   storageScore = localStorage.getItem("score");
