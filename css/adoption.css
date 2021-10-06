@@ -32,6 +32,16 @@ header {
   margin-left: -1400px;
 }
 
+nav {
+  display: flex;
+}
+
+nav a {
+  color: #13293d;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
 
 @media screen and (max-width:995){
   .card {
