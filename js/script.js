@@ -42,187 +42,179 @@
 
 // Final score page with user score and place to enter initials.
 
-document.addEventListener("DOMcontentLoaded", () => {
-  const CardArray = [
-    {
-      name: "cat1",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat1",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat2",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat2",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat3",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat3",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat4",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat4",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat5",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat5",
-      img: "./img/cat.jpg",
-    },
-  ];
+// document.addEventListener("DOMcontentLoaded", () => {
+//   const CardArray = [
+//     {
+//       name: "cat1",
+//       img: "./img/cat.jpg",
+//     },
+//     {
+//       name: "cat1",
+//       img: "./img/cat.jpg",
+//     },
+//     {
+//       name: "cat2",
+//       img: "./img/cat.jpg",
+//     },
+//     {
+//       name: "cat2",
+//       img: "./img/cat.jpg",
+//     },
+//     {
+//       name: "cat3",
+//       img: "./img/cat.jpg",
+//     },
+//     {
+//       name: "cat3",
+//       img: "./img/cat.jpg",
+//     },
+//     {
+//       name: "cat4",
+//       img: "./img/cat.jpg",
+//     },
+//     {
+//       name: "cat4",
+//       img: "./img/cat.jpg",
+//     },
+//     {
+//       name: "cat5",
+//       img: "./img/cat.jpg",
+//     },
+//     {
+//       name: "cat5",
+//       img: "./img/cat.jpg",
+//     },
+//   ];
 
-  cardArray.sort(() => 0.5 - Math.random());
+//   cardArray.sort(() => 0.5 - Math.random());
 
-  const grid = document.querySelector(".grid");
-  const resultDisplay = document.querySelector("#result");
-  var cardsChosen = [];
-  var cardsChosenId = [];
-  var cardsWon = [];
+//   const grid = document.querySelector(".grid");
+//   const resultDisplay = document.querySelector("#result");
+//   var cardsChosen = [];
+//   var cardsChosenId = [];
+//   var cardsWon = [];
 
-  //board
+//   //board
 
-  createBoard();
-  for (let i = 0; i < CardArray.length; i++) {
-    var card = document.createElement("img");
-    card.setAttribute("src", ".img/devJordan1.jpg");
-    card.setAttribute("data-id", i);
-    // card.addEventListener('click', flipcard)
-    grid.appendChild(card);
-  }
+//   function createBoard() {
+//     for (let i = 0; i < cardArray.length; i++) {
+//       var card = document.createElement("img");
+//       card.setAttribute("src", ".img/devJordan1.jpg");
+//       card.setAttribute("data-id", i);
+//       card.addEventListener("click", flipcard);
+//       grid.appendChild(card);
+//     }
+//   }
 
-  function checkForMatch() {
-    var cards = document.querySelectorAll("img");
-    const optionOneId = cardsChosenID[0];
-    const optionTwoId = cardsChosen[1];
-    if (cardsChosen[0] === cardsChosen[1]) {
-      alert("Match!");
-      cards[optionOneId].setAttribute("src", "./img/devJordan1.jpg");
-      cards[optionTwoId].setAttribute("src", "./img.devJordan1.jpg");
-      cardsWon.push(cardsChosen);
-    } else {
-      cards[optionOneId].setAttribute("src", ".img/devJordan.jpg");
-      cars[optionTwoId].setAttribute("src", "./img/devJordan.jpg");
-      alert("Nope");
-    }
-    cardsChosen = [];
-    cardsChosenID = [];
-    resultDisplay.textContent = cardsWon.length;
-    if (cardsWon.length === cardArray.length / 2) {
-      resultDisplay.textContent = "Yup";
-    }
-  }
+//   function checkForMatch() {
+//     var cards = document.querySelectorAll("img");
+//     const optionOneId = cardsChosenID[0];
+//     const optionTwoId = cardsChosen[1];
+//     if (cardsChosen[0] === cardsChosen[1]) {
+//       alert("Match!");
+//       cards[optionOneId].setAttribute("src", "./img/devJordan1.jpg");
+//       cards[optionTwoId].setAttribute("src", "./img.devJordan1.jpg");
+//       cardsWon.push(cardsChosen);
+//     } else {
+//       cards[optionOneId].setAttribute("src", ".img/devJordan.jpg");
+//       cars[optionTwoId].setAttribute("src", "./img/devJordan.jpg");
+//       alert("Nope");
+//     }
+//     cardsChosen = [];
+//     cardsChosenID = [];
+//     resultDisplay.textContent = cardsWon.length;
+//     if (cardsWon.length === cardArray.length / 2) {
+//       resultDisplay.textContent = "Yup";
+//     }
+//   }
 
-  function flipCard() {
-    var cardId = this.getAttribute("data-id");
-    cardsChosen.push(cardArray[cardId].name);
-    cardsChosenId.push(cardId);
-    this.setAttribute("src", cardArray[cardId].img);
-    if (cardsChosen.length === 2) {
-      setTimeout(checkForMatch, 500);
-    }
-  }
-});
+//   function flipCard() {
+//     var cardId = this.getAttribute("data-id");
+//     cardsChosen.push(cardArray[cardId].name);
+//     cardsChosenId.push(cardId);
+//     this.setAttribute("src", cardArray[cardId].img);
+//     if (cardsChosen.length === 2) {
+//       setTimeout(checkForMatch, 500);
+//     }
+//   }
 
-// selectors
-var theCards = $("#theCards");
-var image01 = $("#card-img-01");
-var image02 = $("#card-img-02");
-var image03 = $("#card-img-03");
-var image04 = $("#card-img-04");
-var image05 = $("#card-img-05");
-var image06 = $("#card-img-06");
-var image07 = $("#card-img-07");
-var image08 = $("#card-img-08");
-var image09 = $("#card-img-09");
-var image10 = $("#card-img-10");
+//   createBoard();
 
-// global variables
-var myName = "Bret";
+// // selectors
+// var theCards = $("#theCards");
+// var image01 = $("#card-img-01");
+// var image02 = $("#card-img-02");
+// var image03 = $("#card-img-03");
+// var image04 = $("#card-img-04");
+// var image05 = $("#card-img-05");
+// var image06 = $("#card-img-06");
+// var image07 = $("#card-img-07");
+// var image08 = $("#card-img-08");
+// var image09 = $("#card-img-09");
+// var image10 = $("#card-img-10");
 
-// functions
-function doSomethign() {}
+// // global variables
+// var myName = "Bret";
+
+// // functions
+// function doSomethign() {}
 
 // "x-api-key": "b69f0faf-4c12-4714-8998-743f7fb4546e",
 
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-myHeaders.append("x-api-key", "b69f0faf-4c12-4714-8998-743f7fb4546e");
+function getCatImages(num) {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("x-api-key", "b69f0faf-4c12-4714-8998-743f7fb4546e");
 
-var requestOptions = {
-  method: "GET",
-  headers: myHeaders,
-  redirect: "follow",
-};
+  var requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
 
-fetch(
-  "https://api.thecatapi.com/v1/images/search?format=json&limit=10",
-  requestOptions
-)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
+  return fetch(
+    "https://api.thecatapi.com/v1/images/search?format=json&limit=" +
+      num.toFixed(),
+    requestOptions
+  )
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      //assign 2 cat URLs to a variable an then array
+      var catArray = [];
 
-    //assign 2 cat URLs to a variable an then array
-    var catArray = [];
+      //Loop over the data to generate a table, each table row will have a link to the repo url
+      for (var i = 0; i < data.length; i++) {
+        // Do shit to each element in array
+        var catData = { img: data[i].url, name: data[i].id };
+        catArray.push(catData);
+      }
 
-    //Loop over the data to generate a table, each table row will have a link to the repo url
-    for (var i = 0; i < data.length; i++) {
-      // Do shit to each element in array
-      var catURL = data[i].url;
-      catArray.push(catURL);
-    }
-
-    console.log(catArray);
-
-    // image01.remove();
-    image01.attr("src", catArray[0]);
-    image02.attr("src", catArray[1]);
-    image03.attr("src", catArray[2]);
-    image04.attr("src", catArray[3]);
-    image05.attr("src", catArray[4]);
-    image06.attr("src", catArray[5]);
-    image07.attr("src", catArray[6]);
-    image08.attr("src", catArray[7]);
-    image09.attr("src", catArray[8]);
-    image10.attr("src", catArray[9]);
-  });
+      console.log(catArray);
+      return catArray;
+    });
+}
 
 // Template END //
 
 // - EXAMPLES - //
 
-// Declaring a variable - this is an example
-var studentName;
+// // Declaring a variable - this is an example
+// var studentName;
 
-// Uses assignment operator(=) to assign a value
-var studentName = "Abdul";
+// // Uses assignment operator(=) to assign a value
+// var studentName = "Abdul";
 
-// To re-assign a variable, use only the variable's name
-studentName = "Tonya";
+// // To re-assign a variable, use only the variable's name
+// studentName = "Tonya";
 
-// To access a value stored in a variable, use the variable's name
-console.log(studentName);
+// // To access a value stored in a variable, use the variable's name
+// console.log(studentName);
 
-//To combine the message with a variable value use the concatenation operator(+)
-//Logs "My name is "
-console.log("My name is ");
+// //To combine the message with a variable value use the concatenation operator(+)
+// //Logs "My name is "
+// console.log("My name is ");
 
-// Logs "My name is Tonya"
-console.log("My name is " + studentName);
+// // Logs "My name is Tonya"
+// console.log("My name is " + studentName);
