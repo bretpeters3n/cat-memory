@@ -74,9 +74,9 @@ section {
 }
 
 footer {
+
   padding: 20px;
   text-align: center;
-  /* background: #13293d; */
   color: #13293d;
 }
 
@@ -90,18 +90,11 @@ footer {
   aside {
     order: 2;
   }
-  /* Change the header background */
-  header {
-    /* background: #772014; */
-  }
-  /* Change the navbar and footer background */
-  nav,
-  footer {
-    /* background-color: #bb8588; */
-  }
+
 }
 
 /* styling for range */
+
 .range-wrap {
   position: relative;
   margin: 0 auto 3rem;
@@ -110,7 +103,7 @@ footer {
   width: 100%;
 }
 .bubble {
-  background: red;
+  background:palevioletred;
   color: white;
   padding: 4px 12px;
   position: absolute;
@@ -123,11 +116,11 @@ footer {
   position: absolute;
   width: 2px;
   height: 2px;
-  background: red;
-  top: -1px;
+  background: palevioletred;
+  top: -10px;
   left: 50%;
 }
 
-body {
-  margin: 2rem;
+#startBtn {
+  background-color: crimson;
 }

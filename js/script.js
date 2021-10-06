@@ -225,6 +225,7 @@ function compareFlips() {
 startBtn.click (startTimer);
 
 // range slider function to add value while sliding
+
 const allRanges = document.querySelectorAll(".range-wrap");
 allRanges.forEach(wrap => {
   const range = wrap.querySelector(".range");

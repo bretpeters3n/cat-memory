@@ -12,13 +12,12 @@
 <body>
   <canvas id="granim-canvas"></canvas>
 
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container-fluid">
+  <nav class="navbar navbar-light navbar-expand-lg">
       <a class="navbar-brand"><img src="./img/catMemory_cat_logo.png" class="catLogo" alt="#">CatMemory</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#game">The Game</a>
@@ -51,14 +50,12 @@
   </main>
 
   <footer id="footer">
-    <h3>
-      <label for="customRange2" class="form-label">Rate our game!</label>
-      <div class="range-wrap" style="width: 75%;">
-        <input type="range" class="range" min="1" max="5" step="1">
-        <output class="bubble"></output>
-      </div>
-      <button type="button" class="btn btn-dark">Submit</button>
-    </h3>
+    <h3>Rate Our Game!</h3>
+    <div class="range-wrap" style="width: 75%;">
+      <input type="range" class="range" min="1" max="5" step="1">
+      <output class = "bubble"></output>
+    </div>
+      <button id= "submit" type="button" class="btn btn-primary">Submit</button>
   </footer>
     
 <!-- Added link to the jQuery library -->
