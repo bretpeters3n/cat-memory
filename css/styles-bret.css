@@ -17,6 +17,11 @@
   filter: drop-shadow(0 0 0.125rem black);
   margin: 8px;
 }
+.cards img:hover {
+  opacity: 80%;
+  transition: 0.2s;
+  padding: 4px;
+}
 .container {
   max-width: 960px;
 }
