@@ -1,95 +1,87 @@
-document.addEventListener("DOMcontentLoaded", () => {
-  const CardArray = [
-    {
-      name: "cat1",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat1",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat2",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat2",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat3",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat3",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat4",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat4",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat5",
-      img: "./img/cat.jpg",
-    },
-    {
-      name: "cat5",
-      img: "./img/cat.jpg",
-    },
-  ];
-
+$(document).ready(async () => {
+  const apiData = await getCatImages(5);
+  const cardArray = [...apiData, ...apiData];
   cardArray.sort(() => 0.5 - Math.random());
-
-  const grid = document.querySelector(".grid");
+  const grid = $(".grid");
   const resultDisplay = document.querySelector("#result");
   var cardsChosen = [];
   var cardsChosenId = [];
   var cardsWon = [];
-
   //board
-
-  createBoard();
-  for (let i = 0; i < CardArray.length; i++) {
-    var card = document.createElement("img");
-    card.setAttribute("src", ".img/devJordan1.jpg");
-    card.setAttribute("data-id", i);
-    // card.addEventListener('click', flipcard)
-    grid.appendChild(card);
+  const rowCount = 2;
+  const colCount = 5;
+  function createBoard() {
+    //              | should Create row?
+    // rowNumber: 0 | true        | rowNumber < rowCount | true
+    // rowNumber: 1 | true        |                      | true
+    // rowNumber: 2 | false       |                      | false
+    // .
+    let i = 0;
+    for (let rowNumber = 0; rowNumber < rowCount; rowNumber++) {
+      let row = $("<div>", {
+        class: "row",
+      });
+      grid.append(row);
+      for (let colNumber = 0; colNumber < colCount; colNumber++) {
+        let col = $("<div>", {
+          class: "col",
+        });
+        let card = $("<div>", {
+          class: "card",
+        });
+        let image = $("<img>", {
+          src: "./img/devJordan.jpg",
+          "data-id": i,
+          on: { click: flipCard },
+        });
+        row.append(col);
+        col.append(card);
+        card.append(image);
+        i++;
+      }
+    }
+    // for (let i = 0; i < cardArray.length; i++) {
+    //   let card = $("<img>", {
+    //     src: "./img/devJordan.jpg",
+    //     "data-id": i,
+    //     on: { click: flipCard },
+    //   });
+    //   //   var card = document.createElement("img");
+    //   //   card.setAttribute("src", "./img/devJordan.jpg");
+    //   //   card.setAttribute("data-id", i);
+    //   //   card.addEventListener("click", flipCard);
+    //   grid.append(card);
+    // }
   }
-
   function checkForMatch() {
     var cards = document.querySelectorAll("img");
-    const optionOneId = cardsChosenID[0];
-    const optionTwoId = cardsChosen[1];
+    const optionOneId = cardsChosenId[0];
+    const optionTwoId = cardsChosenId[1];
     if (cardsChosen[0] === cardsChosen[1]) {
       alert("Match!");
-      cards[optionOneId].setAttribute("src", "./img/devJordan1.jpg");
-      cards[optionTwoId].setAttribute("src", "./img.devJordan1.jpg");
+      cards[optionOneId].setAttribute("src", "about:blank");
+      cards[optionTwoId].setAttribute("src", "about:blank");
       cardsWon.push(cardsChosen);
     } else {
-      cards[optionOneId].setAttribute("src", ".img/devJordan.jpg");
-      cars[optionTwoId].setAttribute("src", "./img/devJordan.jpg");
+      cards[optionOneId].setAttribute("src", "./img/devJordan.jpg");
+      cards[optionTwoId].setAttribute("src", "./img/devJordan.jpg");
       alert("Nope");
     }
     cardsChosen = [];
-    cardsChosenID = [];
+    cardsChosenId = [];
     resultDisplay.textContent = cardsWon.length;
     if (cardsWon.length === cardArray.length / 2) {
       resultDisplay.textContent = "Yup";
     }
   }
-
   function flipCard() {
     var cardId = this.getAttribute("data-id");
     cardsChosen.push(cardArray[cardId].name);
     cardsChosenId.push(cardId);
     this.setAttribute("src", cardArray[cardId].img);
     if (cardsChosen.length === 2) {
-      setTimeout(checkForMatch, 500);
+      setTimeout(checkForMatch, 50);
     }
   }
+  createBoard();
 });
