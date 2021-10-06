@@ -93,6 +93,7 @@ function startGame() {
         clearInterval(timerInterval);
         window.confirm("Times Up!");
         console.log(secondsLeft)
+    
   }
 
 }, 1000);
