@@ -58,11 +58,14 @@ var image07 = $("#card-img-07");
 var image08 = $("#card-img-08");
 var image09 = $("#card-img-09");
 var image10 = $("#card-img-10");
+var startBtn = $(".startGame");
+var timer = $("#timer")
 
 // global variables
 var catArray = [];
 var catArrayDuplicate = [];
 var cards = [];
+
 var cardsFlippedCat = [];
 var cardsFlippedIndex = [];
 var cardLogo = "./img/cat_200x200.jpg";
@@ -73,6 +76,9 @@ var startGame = $("#startGame");
 var introImage = $("#introImage");
 
 var gamePlayHappening = false;
+
+var secondsLeft = 60;
+
 
 // functions
 function doSomethign() {}
@@ -178,6 +184,7 @@ function init() {
       // image08.attr("src", catArray[7]);
     });
 }
+
 
 //IMG tag method
 function createMemoryBoard() {
@@ -321,6 +328,7 @@ startGame.click(function () {
     console.log("Game is currently being played.");
   }
 });
+
 
 // Template END //
 
