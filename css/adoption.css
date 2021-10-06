@@ -21,10 +21,22 @@ header {
   margin: 0 auto;
   float: none; 
   margin-bottom: 10px; 
+  margin-top: 30px;
+  width: 300px;
+  height: 500px
 }
+
+.back {
+  border-radius: 8px;
+  color: rgb(170, 170, 170);
+  box-shadow: 0 4px 4px 0 rgb(0, 0, 0);
+  margin-left: -1400px;
+}
+
 
 @media screen and (max-width:995){
   .card {
     width: 100%;
   }
 }
+
