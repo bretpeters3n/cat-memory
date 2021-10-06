@@ -100,10 +100,10 @@ function startTimer() {
         window.confirm("Times Up!");
         console.log(secondsLeft);
         localStorage.setItem("score", +1);
-
+      
   }
-
 }, 1000);
+}
   
 function init() {
   gamePlayHappening = true;
