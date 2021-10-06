@@ -14,6 +14,18 @@
   object-fit: cover;
   flex-direction: row;
   border-radius: 8px;
-  outline: 1px solid #000;
+  filter: drop-shadow(0 0 0.125rem black);
   margin: 8px;
+}
+.container {
+  max-width: 960px;
+}
+.greenOutline {
+  outline: 6px solid green;
+}
+#introImage {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+  margin: auto;
 }

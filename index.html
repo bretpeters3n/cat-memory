@@ -36,11 +36,16 @@
   <header>
     <h1>A Cat based Memory Game</h1>
     <p>Match as many cat cards as you can in the time allotted.</p>
-    <div id="timer"></div>
-    <button id="startBtn" type="button" class="btn btn-dark">Start Game</button>
+
+      <div id="timer"></div>           
+    <p>Your previous score was: XX</p>
+
+    <button type="submit" class="btn btn-primary" id="startGame">Start Game</button>
+
   </header>
 
-  <main class="container" id="game">
+  <main class="container">
+    <img id="introImage" src="./img/catCards.png" />
 
     <div class="cards" id="theCards">
 
@@ -77,7 +82,7 @@
 
 <!-- Import Javasctipt file 'script.js' -->
 <script src="./js/script.js"></script>
-<script src="./js/script-bret.js"></script>
+<!-- <script src="./js/script-bret.js"></script> -->
 
 </body>
 
