@@ -13,7 +13,6 @@
 
 header {
     text-align: center;
-    margin-top: 10px;
     font-size: larger;
 }
 
@@ -23,7 +22,7 @@ header {
   margin-bottom: 10px; 
   margin-top: 30px;
   width: 300px;
-  height: 500px
+  height: 560px
 }
 
 .back {
@@ -33,6 +32,16 @@ header {
   margin-left: -1400px;
 }
 
+nav {
+  display: flex;
+}
+
+nav a {
+  color: #13293d;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
 
 @media screen and (max-width:995){
   .card {
