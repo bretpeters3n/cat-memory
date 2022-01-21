@@ -82,9 +82,11 @@ section {
 
 /* styling for range */
 footer {
+  display: flexbox;
   padding: 20px;
   text-align: center;
   color: #13293d;
+  justify-content: center;
   
 }
 
@@ -92,7 +94,7 @@ footer h3 {
   font-size: 20px;
 }
 
-.form-control {
+.form-inline {
   text-align: center;
 }
 
@@ -130,5 +132,14 @@ footer h3 {
   font-size: 35px;
   font-weight: bold;
   padding-bottom: 10px;
+}
+
+#email {
+  width: 50%;
+}
+
+#emailTag {
+  font-weight: bold;
+  padding-right: 10px;
 }
 
