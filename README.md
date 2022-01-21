@@ -88,9 +88,9 @@ The user can have fun playing the game and try to beat their previous score. In 
 
 <!-- BUILT WITH -->
 ### Built With
-* [HTML]()
-* [CSS]()
-* [Javascript]()
+* HTML
+* CSS
+* Javascript
 * [jQuery](https://jquery.com/)
 * [Bootstrap](https://getbootstrap.com/)
 
@@ -178,7 +178,7 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- LICENSE -->
 ## License
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
